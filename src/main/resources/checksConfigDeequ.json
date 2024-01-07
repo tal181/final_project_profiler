@@ -1,0 +1,96 @@
+{
+  "checks": [
+    {
+      "checkName": "Number of rows is larger than 0",
+      "expression": "countRows",
+      "operator": ">",
+      "threshold": 0,
+      "types": [
+      ]
+    },
+    {
+      "checkName": "No Null/Missing values in data for column ${column}",
+      "expression": "countNulls_${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "checkName": "No Zeros in columns for column ${column}",
+      "expression": "countZeros_${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "Double",
+        "Int"
+      ]
+    },
+    {
+      "checkName": "No numeric values located on textual columns for column ${column}",
+      "expression": "countNumericInStringColumn_${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "String"
+      ]
+    },
+    {
+      "checkName": "No Numeric values are smaller than 0 for column ${column}",
+      "expression": "countMinNumeric_${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "Double",
+        "Int"
+      ]
+    },
+    {
+      "checkName": "No Columns with constant values for column ${column}",
+      "expression": "countDistinctValues_${column}",
+      "operator": ">",
+      "threshold": 1,
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "checkName": "No Duplicate rows in all columns",
+      "expression": "countRows - DuplicateRowsAllColumns",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+      ]
+    },
+    {
+      "checkName": "No Duplicate rows in specific column ${column}",
+      "expression": "countRows - countDistinctValues_${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "checkName": "No Duplicate column names",
+      "expression": "DuplicateColumnNames",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+      ]
+    },
+    {
+      "checkName": "Data is fresh for column ${column}",
+      "expression": "freshness_${column}",
+      "operator": ">=",
+      "threshold": -2,
+      "types": [
+        "Date"
+      ]
+    }
+  ]
+}
+
+
+

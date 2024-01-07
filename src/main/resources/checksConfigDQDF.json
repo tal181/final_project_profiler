@@ -1,0 +1,96 @@
+{
+  "validators": [
+    {
+      "name": "CountRowsValidator",
+      "description": "Number of rows is larger than 0",
+      "operator": ">",
+      "threshold": 0,
+      "types": [
+      ]
+    },
+    {
+      "name": "NoNullsValidator",
+      "description": "No Null/Missing values in data for column ${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "name": "NoZerosValidator",
+      "description": "No Zeros in columns for column ${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "Double",
+        "Int"
+      ]
+    },
+    {
+      "name": "NoNumericValuesTextualValidator",
+      "description": "No numeric values located on textual columns for column ${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "String"
+      ]
+    },
+    {
+      "name": "NoNumericValuesSmaller0Validator",
+      "description": "No Numeric values are smaller than 0 for column ${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "Double",
+        "Int"
+      ]
+    },
+    {
+      "name": "NoColumnsWithConstantValuesValidator",
+      "description": "No Columns with constant values for column ${column}",
+      "operator": ">",
+      "threshold": 1,
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "name": "NoDuplicatesInRowsValidator",
+      "description": "No Duplicate rows in all columns",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+      ]
+    },
+    {
+      "name": "NoDuplicatesInSpecificColumnValidator",
+      "description": "No Duplicate rows in specific column ${column}",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "name": "NoDuplicatesColumnsNamesValidator",
+      "description": "No Duplicate column names",
+      "operator": "=",
+      "threshold": 0,
+      "types": [
+      ]
+    },
+    {
+      "name": "DataISFreshValidator",
+      "description": "Data is fresh for column ${column}",
+      "operator": ">=",
+      "threshold": -2,
+      "types": [
+        "Date"
+      ]
+    }
+  ]
+}
+
+
+

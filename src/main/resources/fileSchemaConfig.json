@@ -1,0 +1,57 @@
+{
+      "schema": [
+        {
+          "columnName": "START",
+          "columnType": "Date"
+        },
+        {
+          "columnName": "STOP",
+          "columnType": "Date"
+        },
+        {
+          "columnName": "PATIENT",
+          "columnType": "String"
+        },
+        {
+          "columnName": "PAYER",
+          "columnType": "String"
+        },
+        {
+          "columnName": "ENCOUNTER",
+          "columnType": "String"
+        },
+        {
+          "columnName": "CODE",
+          "columnType": "Int"
+        },
+        {
+          "columnName": "DESCRIPTION",
+          "columnType": "String"
+        },
+        {
+          "columnName": "BASE_COST",
+          "columnType": "Double"
+        },
+        {
+          "columnName": "PAYER_COVERAGE",
+          "columnType": "Double"
+        },
+        {
+          "columnName": "DISPENSES",
+          "columnType": "Double"
+        },
+        {
+          "columnName": "TOTALCOST",
+          "columnType": "Double"
+        },
+        {
+          "columnName": "REASONCODE",
+          "columnType": "Double"
+        },
+        {
+          "columnName": "REASONDESCRIPTION",
+          "columnType": "String"
+        }
+      ]
+
+}

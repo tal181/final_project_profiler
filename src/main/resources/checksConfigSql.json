@@ -1,0 +1,99 @@
+{
+  "checks": [
+    {
+      "checkName": "Number of rows is larger than 0",
+      "query": "select count(*), case when count(*) > 0 then 1 else 0 end as metricName from {table}",
+      "metricType": "Dataset",
+      "types": [
+        "any"
+      ],
+      "operator": ">",
+      "threshold": 0
+    },
+    {
+      "checkName": "No Null/Missing values in data for column ${column}",
+      "query": "select count(*), case when count(*) > 0 then 1 else 0 end as metricName from {table} where {column} is null",
+      "metricType": "Column",
+      "types": [
+        "any"
+      ],
+      "operator": "=",
+      "threshold": 0
+    },
+    {
+      "checkName": "No Zeros in columns for column ${column}",
+      "query": "select count(*), case when count(*) > 0 then 1 else 0 end as metricName  from {table} where ({column} = 0 or {column} = 0.00)",
+      "metricType": "Column",
+      "types": [
+        "Double",
+        "Int"
+      ],
+      "operator": "=",
+      "threshold": 0
+    },
+    {
+      "checkName": "No numeric values located on textual columns for column ${column}",
+      "query": "select count(*), case when count(*) > 0 then 1 else 0 end as metricName  from {table} where BIGINT({column}) IS NOT NULL AND DOUBLE({column}) = BIGINT({column})",
+      "metricType": "Column",
+      "types": [
+        "String"
+      ],
+      "operator": "=",
+      "threshold": 0
+    },
+    {
+      "checkName": "No Numeric values are smaller than 0 for column ${column}",
+      "query": "select count(*), case when count(*) > 0 then 1 else 0 end as metricName  from {table} where {column} <=0 or {column} <=0.0",
+      "metricType": "Column",
+      "types": [
+        "Double",
+        "Int"
+      ],
+      "operator": "=",
+      "threshold": 0
+    },
+    {
+      "checkName": "No Columns with constant values for column ${column}",
+      "query": "select case when count(*) = 1 then 1 else 0 end  as metricName from (select count({column}) as metricName from {table} GROUP BY {column})",
+      "metricType": "Column",
+      "types": [
+        "any"
+      ],
+      "operator": "=",
+      "threshold": 0
+    },
+    {
+      "checkName": "No Duplicate rows in all columns",
+      "query": "select case when count(*) > 0 then 1 else 0 end  as metricName from (select count({column}) as metricName from {table} GROUP BY {column} HAVING count(*) > 1)",
+      "metricType": "Dataset",
+      "types": [
+        "any"
+      ],
+      "operator": "=",
+      "threshold": 0
+    },
+    {
+      "checkName": "No Duplicate rows in specific column ${column}",
+      "query": "select case when count(*) = 0 then 0 else 1 end  as metricName from (select count({column}) as metricName from {table} GROUP BY {column} HAVING count({column}) > 1)",
+      "metricType": "Column",
+      "types": [
+        "any"
+      ],
+      "operator": "=",
+      "threshold": 0
+    },
+    {
+      "checkName": "Data is fresh for column ${column}",
+      "query": "select max(datediff({column}, current_date())) as metricName  from {table}",
+      "metricType": "Column",
+      "types": [
+        "Date"
+      ],
+      "operator": ">=",
+      "threshold": -2
+    }
+  ]
+}
+
+
+

@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="sbt: com.amazon.deequ:deequ:2.0.3-spark-3.3-local:jar" external-system-id="SBT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/amazon/deequ/deequ/2.0.3-spark-3.3-local/deequ-2.0.3-spark-3.3-local.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/amazon/deequ/deequ/2.0.3-spark-3.3-local/deequ-2.0.3-spark-3.3-local.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/amazon/deequ/deequ/2.0.3-spark-3.3-local/deequ-2.0.3-spark-3.3-local-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/amazon/deequ/deequ/2.0.3-spark-3.3-local/deequ-2.0.3-spark-3.3-local-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/amazon/deequ/deequ/2.0.3-spark-3.3-local/deequ-2.0.3-spark-3.3-local-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
