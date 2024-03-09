@@ -1,0 +1,42 @@
+{
+  "dataAsset":{
+    "name": "schemaName.tableName",
+    "schedule": "5 4 * * *",
+    "observerName": "my observer name"
+  },
+  "checks": [ // list of data quality checks
+    {
+      "checkName": "No numeric values located on textual columns for column ${column}",
+      "query": "select count(*), case when count(*) > 0 then 1 else 0 end as metricName  from {table} where BIGINT({column}) IS NOT NULL AND DOUBLE({column}) = BIGINT({column})",
+      "metricType": "Column",
+      "columnTypes": "String",
+      "validation": {
+        "type": "static",
+        "operator": "The mathematical operator to use >,<,=",
+        "threshold": "1.23"
+      }
+    },
+    {
+      "checkName": "No Null/Missing values in data for column ${column}",
+      "query": "select count(*), case when count(*) > 0 then 1 else 0 end as metricName from {table} where {column} is null",
+      "metricType": "Column",
+      "columnTypes": "String",
+      "validation": {
+        "type": "anomaly"
+      }
+    }
+  ],
+  "notifications": [
+    {
+      "channel": "slack",
+      "channelName": "#my-slack-channel",
+      "alertMeWhen": ["CONTEXT_EVAL_FINISHED_WITH_WARNINGS", "CONTEXT_EVAL_FINISHED_WITH_ERRORS"],
+
+    },
+    {
+      "channel": "email",
+      "channelName": "something@intuit.com",
+      "alertMeWhen": ["CONTEXT_EVAL_FINISHED_WITH_WARNINGS"]
+    }
+  ]
+}

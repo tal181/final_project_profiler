@@ -14,13 +14,13 @@ object App {
     val cli = new CommandLineArgs(args)
 
     run(cli, Strategy.Deequ)
-    run(cli, Strategy.Sql)
-    run(cli, Strategy.DQDF)
+    //    run(cli, Strategy.Sql)
+    //    run(cli, Strategy.DQDF)
 
     VisualizationComponent.main(args)
   }
 
-  private def run(cli: CommandLineArgs, strategy: String) = {
+  def run(cli: CommandLineArgs, strategy: String) = {
     logger.debug(s"strategy is $strategy")
     strategy match {
       case Strategy.Sql => {

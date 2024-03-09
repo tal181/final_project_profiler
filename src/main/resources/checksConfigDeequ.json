@@ -1,4 +1,80 @@
 {
+  "metrics": [
+    {
+      "metricName": "countRows",
+      "definitionName": "count rows",
+      "metricType": "Dataset",
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "metricName": "countNulls",
+      "definitionName": "count nulls",
+      "metricType": "Column",
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "metricName": "countZeros",
+      "definitionName": "count zeros",
+      "metricType": "Column",
+      "types": [
+        "Double",
+        "Int"
+      ]
+    },
+    {
+      "metricName": "countNumericInStringColumn",
+      "definitionName": "count integers",
+      "metricType": "Column",
+      "types": [
+        "String"
+      ]
+    },
+    {
+      "metricName": "countDistinctValues",
+      "definitionName": "count uniques",
+      "metricType": "Column",
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "metricName": "freshness",
+      "definitionName": "max",
+      "metricType": "Column",
+      "types": [
+        "Date"
+      ]
+    },
+    {
+      "metricName": "countMinNumeric",
+      "definitionName": "count min numeric",
+      "metricType": "Column",
+      "types": [
+        "Double",
+        "Int"
+      ]
+    },
+    {
+      "metricName": "DuplicateColumnNames",
+      "definitionName": "duplicate columns",
+      "metricType": "Dataset",
+      "types": [
+        "any"
+      ]
+    },
+    {
+      "metricName": "DuplicateRowsAllColumns",
+      "definitionName": "Distinctness",
+      "metricType": "Dataset",
+      "types": [
+        "any"
+      ]
+    }
+  ],
   "checks": [
     {
       "checkName": "Number of rows is larger than 0",

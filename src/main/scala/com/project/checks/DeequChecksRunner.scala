@@ -54,7 +54,7 @@ case class DeequChecksRunner(cli: CommandLineArgs) extends ChecksRunner {
         cli.maxMetricsPerQuery, next = specialCasesCalculator,
       ))
 
-    val metricsConfig = ConfigFactory.load(cli.metricsConfigDeequPath)
+    val metricsConfig = ConfigFactory.load(cli.checksConfigDeequPath)
 
     val profiler =
       deequ.Profiler(sourceReader, metricsCalculator, metricsConfig)
