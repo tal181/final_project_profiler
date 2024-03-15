@@ -10,15 +10,16 @@ import org.slf4j.{Logger, LoggerFactory}
 object App {
   protected val logger: Logger = LoggerFactory.getLogger(this.getClass)
 
-  def main(args: Array[String]): Unit = {
-    val cli = new CommandLineArgs(args)
+//  def main(args: Array[String]): Unit = {
+//    val cli = new CommandLineArgs(args)
+//
+//    run(cli, Strategy.DQDF)
+//    run(cli, Strategy.Deequ)
+//    run(cli, Strategy.Sql)
 
-    run(cli, Strategy.Deequ)
-    //    run(cli, Strategy.Sql)
-    //    run(cli, Strategy.DQDF)
-
-    VisualizationComponent.main(args)
-  }
+//
+//    //VisualizationComponent.main(args)
+//  }
 
   def run(cli: CommandLineArgs, strategy: String) = {
     logger.debug(s"strategy is $strategy")
