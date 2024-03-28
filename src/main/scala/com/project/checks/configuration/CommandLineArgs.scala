@@ -15,7 +15,7 @@ class CommandLineArgs(args: Seq[String]) extends ScallopConf(args)  {
   val Logger = LoggerFactory.getLogger(this.getClass)
 
   private val strategyArg  = opt[String]("strategy", required = true, default = Some(Strategy.Sql))
-  private val dataSetPathArg = opt[String]("dataSetPath", required = true, default = Some("/Users/tsharon/IdeaProjects/final_project/src/main/resources/text.csv"))
+  private val dataSetPathArg = opt[String]("dataSetPath", required = true, default = Some("/Users/tsharon/IdeaProjects/final_project/src/main/resources/example2/observations.csv"))
   private val dataSetOutputPathSqlArg = opt[String]("dataSetOutputPathSql", required = true, default = Some("/Users/tsharon/IdeaProjects/final_project/src/main/resources/sql"))
   private val dataSetOutputPathDeequArg = opt[String]("dataSetOutputPathDeequ", required = true, default = Some("/Users/tsharon/IdeaProjects/final_project/src/main/resources/deequ"))
   private val dataSetOutputPathDQDFArg = opt[String]("dataSetOutputPathDQDF", required = true, default = Some("/Users/tsharon/IdeaProjects/final_project/src/main/resources/dqdf"))
@@ -30,7 +30,7 @@ class CommandLineArgs(args: Seq[String]) extends ScallopConf(args)  {
 
   private val checksConfigDQDFPathArg = opt[String]("checksConfigDQDFPathArg", required = true, default = Some("checksConfigDQDF.json"))
 
-  private val fileSchemaConfigPathArg = opt[String]("fileSchemaConfigPathArg", required = true, default = Some("fileSchemaConfig.json"))
+  private val fileSchemaConfigPathArg = opt[String]("fileSchemaConfigPathArg", required = true, default = Some("/Users/tsharon/IdeaProjects/final_project/src/main/resources/example2/fileSchemaConfig.json"))
 
 
   verify
