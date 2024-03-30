@@ -1,6 +1,4 @@
-package com.project.checks.sql
-
-import com.amazon.deequ.analyzers.Distinctness
+package com.project.checks.deequ.calculator
 
 object agg {
   sealed trait AggFunction

@@ -4,8 +4,7 @@ import com.amazon.deequ.analyzers.Distinctness
 import MetricsQueryParser._
 import com.project.checks.domain
 import com.project.checks.domain.{Metric, MetricWithParsedQuery, QueryAst}
-import com.project.checks.sql.agg
-import com.project.checks.sql.agg.AggFunction
+import agg.AggFunction
 import com.project.checks.utils.Utils.extractors.DefinitionNameEq
 import org.slf4j.{Logger, LoggerFactory}
 

@@ -6,7 +6,6 @@ import com.amazon.deequ.custom.custom
 import com.amazon.deequ.metrics.{DoubleMetric, Metric => DeequMetric}
 import MetricsCalculator.convertToString
 import com.project.checks.domain.{Metric, MetricResult, MetricWithParsedQuery, Table}
-import com.project.checks.sql.agg
 import com.project.checks.utils.ExceptionMessageConverter
 import agg.{Count, CountDistinct}
 import org.apache.spark.sql.Column

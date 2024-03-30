@@ -8,8 +8,7 @@ import com.project.checks.domain.{Schema, validatorConfig}
 import com.project.checks.utils.Utils
 import com.typesafe.config.ConfigFactory
 
-//selects a predefined
-//set of validators based on the type of the underlying data
+//selects a predefined set of validators based on the type of the underlying data
 class ValidatorSetIdentifier(catalog: DataframeCatalog, operationOrganizer: ValidatorOperationOrganizer,cli: CommandLineArgs) {
   def createValidator(config: validatorConfig): Map[String, Validator] = {
     val types = config.types
